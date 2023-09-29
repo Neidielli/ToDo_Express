@@ -1,0 +1,16 @@
+{
+  "name": "todo_express",
+  "version": "1.0.0",
+  "description": "Este é um projeto de To-Do List (lista de tarefas) com autenticação desenvolvido utilizando o framework Express em Node.js. O objetivo deste projeto é criar uma aplicação web que permite aos usuários gerenciar suas tarefas pessoais. Além disso, o projeto também inclui recursos adicionais, como geração de números aleatórios, contadores de acesso e autenticação de usuários.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mustache-express": "^1.3.2"
+  }
+}
