@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Configura o body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(session({
   secret: 'admin', 
@@ -40,7 +41,7 @@ app.post('/salvauser', (req, res) => {
 });
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });

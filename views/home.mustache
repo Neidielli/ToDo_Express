@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/styleHome.css">
+    <title>TODO APP</title>
+  </head>
+  <body>
+    <h1>TODO APP</h1>
+    <h2>Tarefas</h2>
+    <ul>
+    {{#tasks}}
+        <li>{{name}} <a href="/?tid={{id}}">edit</a> <a href="/tarefas/del/{{id}}">done</a></li>
+    {{/tasks}}
+    </ul>
+
+    <h2>Nova tarefa</h2>
+    <form action="/tarefas" method="POST">
+        {{#task.id}}
+        <input type="hidden" name="id" value="{{.}}">
+        {{/task.id}}
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{task.name}}"/>
+        <input type="submit" value="Salvar" class="btn-primary"/>
+    </form>
+    <p>{{erro}}</p>
+
+  </body>
+</html>
