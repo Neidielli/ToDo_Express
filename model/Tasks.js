@@ -24,14 +24,14 @@ module.exports = {
         }
         return null;
     },
-    // getPositionById(id) {
-    //     for (let i = 0; i<tasks.length; i++) {
-    //         if (tasks[i].id == id) {
-    //             return i;
-    //         }
-    //     }
-    //     return -1;
-    // },
+    getPositionById(id) {
+        for (let i = 0; i<tasks.length; i++) {
+            if (tasks[i].id == id) {
+                return i;
+            }
+        }
+        return -1;
+    },
     delete(id) { // Exclui
         let i = this.getPositionById(id);
         if (i >= 0) {

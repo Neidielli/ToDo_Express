@@ -40,6 +40,8 @@ app.post('/salvauser', (req, res) => {
   res.redirect('/tasks'); // Redireciona para a página inicial
 });
 
+const router = require('./routes');
+app.use('/', router);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
