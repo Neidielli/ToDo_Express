@@ -4,7 +4,7 @@
   "description": "Este é um projeto de To-Do List (lista de tarefas) com autenticação desenvolvido utilizando o framework Express em Node.js. O objetivo deste projeto é criar uma aplicação web que permite aos usuários gerenciar suas tarefas pessoais. Além disso, o projeto também inclui recursos adicionais, como geração de números aleatórios, contadores de acesso e autenticação de usuários.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon -e mustache,js,html,css ./bin/www"
   },
   "keywords": [],
   "author": "",

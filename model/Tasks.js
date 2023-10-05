@@ -1,37 +1,38 @@
-let ids = 0;
-let tasks = [];
+let ids = 0; // id das tarefas
+let tasks = []; // array que armazena as tasks
 
+// Exporta o objeto para que seja disponível em outros módulos
 module.exports = {
-    new(name) {
+    new(name) { // Adiciona
         let task = {id: ++ids, name: name};
         tasks.push(task);
         return task;
     },
-    update (id, name) {
+    update (id, name) { // Edita
         let pos = this.getPositionById(id)
-        if (pos >= 0) {
+        if (pos >= 0) { // Se encontrar a tarefa
             tasks[pos].name = name;
         }
     },
-    list() {
+    list() { // lista
         return tasks;
     },
-    getElementById(id) {
+    getElementById(id) { // Busca a tarefa por id
         let pos = this.getPositionById(id)
         if (pos >= 0) {
             return tasks[pos];
         }
         return null;
     },
-    getPositionById(id) {
-        for (let i = 0; i<tasks.length; i++) {
-            if (tasks[i].id == id) {
-                return i;
-            }
-        }
-        return -1;
-    },
-    delete(id) {
+    // getPositionById(id) {
+    //     for (let i = 0; i<tasks.length; i++) {
+    //         if (tasks[i].id == id) {
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // },
+    delete(id) { // Exclui
         let i = this.getPositionById(id);
         if (i >= 0) {
             tasks.splice(i, 1);
