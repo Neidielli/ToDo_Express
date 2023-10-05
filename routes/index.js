@@ -47,7 +47,7 @@ router.post("/tarefas", function (req, res){
       Task.update(id, nome);
     }
     
-    res.redirect("/task");
+    res.redirect("/tasks");
 })
 
 router.get("/tarefas/del/:id", function(req, res){
@@ -58,7 +58,7 @@ router.get("/tarefas/del/:id", function(req, res){
     res.send("Falha ao excluir uma tarefa");
     return;
   }
-  res.redirect("/task");
+  res.redirect("/tasks");
 })
 
 module.exports = router;
