@@ -3,6 +3,21 @@ var Task = require("../model/Tasks.js")
 var TaskSchema = require("../validators/TaskValidator")
 const Joi = require("joi") // Valida dados de solicitações HTTP
 var router = express.Router();
+const path = require('path');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+// Configura o body-parser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use(session({
+  secret: 'admin', 
+  resave: false,
+  saveUninitialized: true
+}));
 
 /* GET home page. */
 router.get('/tasks', function(req, res, next) {
@@ -11,8 +26,9 @@ router.get('/tasks', function(req, res, next) {
     Task.new("Tarefa Default");
   }
 
+  const nomeUsuario = req.session.nomeUsuario;
   let obj = Task.getElementById(req.query.tid);
-  res.render('home', { tasks: Task.list(), task: obj });
+  res.render('home', { tasks: Task.list(), task: obj, nomeUsuario});
 });
 
 router.post("/tarefas", function (req, res){

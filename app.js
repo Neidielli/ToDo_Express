@@ -35,6 +35,8 @@ app.post('/salvauser', (req, res) => {
 
   if (nome) {
     req.session.nomeUsuario = nome; // Armazena o nome do usuário na sessão
+    // const nomeUsuario = req.session.nomeUsuario;
+    // res.render('home', { nomeUsuario });
   }
 
   res.redirect('/tasks'); // Redireciona para a página inicial
